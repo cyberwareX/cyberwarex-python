@@ -21,6 +21,20 @@ TOOL_SPECS = {
             "q": "The search query string.",
         },
     },
+    "cyberwarex_answer": {
+        "method": "answer",
+        "description": (
+            "Answer engine: one call searches the web, reads the top pages, and "
+            "returns a concise answer with source citations. Keyless."
+        ),
+        "use_when": (
+            "Use when you want a grounded, cited answer to a question instead of "
+            "a list of links - research, due diligence, monitoring, fact-checks."
+        ),
+        "args": {
+            "q": "The natural-language question to answer.",
+        },
+    },
     "cyberwarex_web_fetch": {
         "method": "fetch",
         "description": (

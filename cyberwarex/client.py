@@ -349,6 +349,16 @@ class CyberwareX:
         p.update(params)
         return self._request("GET", "search", "/news", params=p)
 
+    def answer(self, q: str, **params: Any) -> Any:
+        """Answer engine: one call searches, reads the top pages, and returns a concise cited answer.
+
+        Returns {"query", "answer", "sources": [{"title", "url"}], ...}. Use this when you want a
+        grounded answer to a question instead of a list of links.
+        """
+        p: Dict[str, Any] = {"q": q}
+        p.update(params)
+        return self._request("GET", "search", "/answer", params=p)
+
     # ---- Agent Web Access (web.cyberwarex.com) -----------------------------
 
     def fetch(self, url: str, format: str = "markdown", **params: Any) -> Any:
